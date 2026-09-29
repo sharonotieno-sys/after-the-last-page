@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>After the Last Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- VIEW 1: the shelf -->
+  <section id="shelf-view">
+    <header class="top">
+      <h1>After the Last Page</h1>
+      <p id="counter" class="counter">0 books</p>
+    </header>
+
+    <div id="shelves"></div>
+
+    <footer class="tools">
+      <button id="export-btn" class="pill" type="button">Back up my shelf</button>
+      <label class="pill" for="import-file">Restore backup</label>
+      <input type="file" id="import-file" accept="application/json" hidden />
+    </footer>
+  </section>
+
+  <!-- VIEW 2: review page for one book -->
+  <section id="review-view" hidden>
+    <div class="review-top">
+      <button id="back-btn" class="pill" type="button">&larr; Back to shelf</button>
+      <button id="delete-btn" class="pill danger" type="button">Delete</button>
+    </div>
+
+    <h2 class="review-heading">Book Review</h2>
+
+    <div class="review-grid">
+      <div class="card left">
+        <label class="cover-box" for="cover-file">
+          <img id="cover-img" alt="Book cover" hidden />
+          <span id="cover-hint">Tap to add cover</span>
+        </label>
+        <input type="file" id="cover-file" accept="image/*" hidden />
+
+        <h3>About book</h3>
+        <label for="f-title">Title</label>
+        <input id="f-title" type="text" />
+        <label for="f-author">Author</label>
+        <input id="f-author" type="text" />
+        <label for="f-genre">Genre</label>
+        <input id="f-genre" type="text" />
+        <label for="f-format">Where I read it</label>
+        <select id="f-format">
+          <option>Paperback</option>
+          <option>Ebook app</option>
+          <option>PDF</option>
+          <option>Audiobook</option>
+        </select>
+        <label for="f-pages">Pages</label>
+        <input id="f-pages" type="number" min="0" />
+      </div>
+
+      <div class="card right">
+        <h3>Rate it</h3>
+        <div id="ratings"></div>
+        <label for="f-thoughts">Thoughts</label>
+        <textarea id="f-thoughts" rows="8"></textarea>
+      </div>
+    </div>
+
+    <div class="card notes">
+      <label for="f-characters">Favorite characters (and why)</label>
+      <textarea id="f-characters" rows="4"></textarea>
+      <label for="f-moments">Favorite moments (add the chapter!)</label>
+      <textarea id="f-moments" rows="4"></textarea>
+      <label for="f-themes">Themes &amp; ideas I want to think about</label>
+      <textarea id="f-themes" rows="4"></textarea>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
